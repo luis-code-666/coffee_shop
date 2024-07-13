@@ -1,6 +1,6 @@
-from django import forms # type: ignore
+from django import forms 
+from .models import Product
 
-from coffee_shop.products.models import Product
 class ProductForm(forms.Form):
     name = forms.CharField(max_length=200, label="Nombre")
     description = forms.CharField(max_length=300, label="Description")
