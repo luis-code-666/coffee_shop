@@ -38,7 +38,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'crispy_forms',
+    'crispy_tailwind',
     'products',
+    'users',
 ]
 
 MIDDLEWARE = [
@@ -127,6 +130,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # Additional locations of static files
 
-from pathlib import Path
+CRISPY_ALLOWED_TEMPLATE_PACKS = "tailwind"
 
-BASE_DIR = Path(__file__).resolve().parent.parent
+CRISPY_TEMPLATE_PACK = "tailwind"
+LOGIN_REDIRECT_URL = 'list_product'
