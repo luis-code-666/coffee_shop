@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+{{order.user.username}}
+{{order.order_date|date}}
+{% comment "" %}
+para debuguer los errores del template
+{% debug order %}
+{% endcomment %}
+
+{% for product_order in order.orderproduct_set.all %}
+    {{product_order.product.name}}
+    {{product_order.product.price}}
+{% empty %}
+    No hay items en tu orden
+{% endfor %}
+
+{% endblock content %}
